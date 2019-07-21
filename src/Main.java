@@ -15,10 +15,15 @@ public class Main {
         System.out.println("Второй объект. Number2 = " + num2.getNumber2());
 
         multiplication(5.0,7.0f); // ???
+        addition(5.0, 7.0f);
     }
 
-    public static Number multiplication(Box<? extends Double> num1, Box<? extends Float> number2) {
+    public static Number multiplication(Box<? extends Number> num1, Box<? extends Number> number2) {
         return num1.getNumber1().doubleValue() * number2.getNumber2().floatValue();
+    }
+
+    public static Number addition(Box<? extends Number> num1, Box<? extends Number> number2) {
+        return num1.getNumber1().doubleValue() + number2.getNumber2().floatValue();
     }
 }
 
