@@ -1,21 +1,22 @@
 public class Main {
 
     public static void main(String[] args) {
-        Box<Number> num1 = new Box<Number>(5.0, 10);
+        Box<Number> num1 = new Box<Number>(new Double(8.0), new Integer(7));
         num1.getNumber1();
         num1.getNumber2();
         System.out.println("Первый объект. Number1 = " + num1.getNumber1());
         System.out.println("Первый объект. Number2 = " + num1.getNumber2());
         System.out.println("___________________");
 
-        Box<Number> num2 = new Box<Number>(50.0f, 100.0f);
+        Box<Float> num2 = new Box<>(12.1F, 10.5F);
         num2.getNumber1();
         num2.getNumber2();
         System.out.println("Второй объект. Number1 = " + num2.getNumber1());
         System.out.println("Второй объект. Number2 = " + num2.getNumber2());
+        System.out.println("___________________");
 
-        multiplication(5.0,7.0f); // ???
-        addition(5.0, 7.0f);
+        System.out.println("Результат сложения - " + addition(num1, num2));
+        System.out.println("Результат умножения - " + multiplication(num1, num2));
     }
 
     public static Number multiplication(Box<? extends Number> num1, Box<? extends Number> number2) {
